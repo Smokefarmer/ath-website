@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Magnetik";
+  src: url("/fonts/Magnetik-Light.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/fonts/SpaceMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LazareGrotesk";
+  src: url("/fonts/LazareGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: #151515;
+  --color-primary: #e4e2d8;
+  --color-secondary: #9b9b9b;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-space-mono: "Space Mono", monospace;
+  --font-magnetik: "Magnetik", sans-serif;
+  --font-LazareGrotesk: "LazareGrotesk", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-secondary);
+  font-family: var(--font-magnetik);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body::selection {
+  background-color: black;
+}
+
+.link-text {
+  @apply text-[0.73vw] tracking-[1.8px] text-primary;
+}
+
+.heading-text {
+  @apply text-[56px] md:text-[70px] lg:text-[calc(9vw-10px)];
+}
+
+.para-text {
+  @apply sm:text-lg md:text-xl;
+}
+
+.custom-line {
+  @apply absolute left-0 w-full h-full;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
